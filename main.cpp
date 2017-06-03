@@ -20,10 +20,10 @@
      //ear5-6 png is from lan
      Mat image_original = imread(argc == 2 ? argv[1] : "ear1.png", 1);
      // change input training picture
-     Mat image_train = imread(argc == 2 ? argv[1] : "./ears/ear-train3-left.png", CV_LOAD_IMAGE_GRAYSCALE);
-     Mat image_adam = imread(argc == 2 ? argv[1] : "./ears/ear-adam-left.png", CV_LOAD_IMAGE_GRAYSCALE);
-     Mat image_yogi = imread(argc == 2 ? argv[1] : "./ears/ear-Yogi-left.png", CV_LOAD_IMAGE_GRAYSCALE);
-     Mat image_lan = imread(argc == 2 ? argv[1] : "./ears/ear-Lan-left.png", CV_LOAD_IMAGE_GRAYSCALE);
+     Mat image_train = imread(argc == 2 ? argv[1] : "./ears/ear-train2-left.png", CV_LOAD_IMAGE_GRAYSCALE);
+     Mat image_adam = imread(argc == 2 ? argv[1] : "./moreears/ear-adamb-left.png", CV_LOAD_IMAGE_GRAYSCALE);
+     Mat image_yogi = imread(argc == 2 ? argv[1] : "./moreears/ear-yogib-left.png", CV_LOAD_IMAGE_GRAYSCALE);
+     Mat image_lan = imread(argc == 2 ? argv[1] : "./moreears/ear-lanb-left.png", CV_LOAD_IMAGE_GRAYSCALE);
 
     Mat stats_train = spatial_histogram(image_train, 65536);
     Mat stats_adam = spatial_histogram(image_adam, 65536);
