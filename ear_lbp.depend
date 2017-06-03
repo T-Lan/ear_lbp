@@ -1,0 +1,87 @@
+# depslib dependency file v1.0
+1496489119 source:c:\ear_lbp\histogram.cpp
+	"histogram.hpp"
+	<vector>
+
+1496489143 c:\ear_lbp\histogram.hpp
+	<opencv2/core/core.hpp>
+	<limits>
+
+1397214926 c:\opencv\modules\core\include\opencv2\core\core.hpp
+	"opencv2/core/types_c.h"
+	"opencv2/core/version.hpp"
+	<limits.h>
+	<algorithm>
+	<cmath>
+	<cstddef>
+	<complex>
+	<map>
+	<new>
+	<string>
+	<vector>
+	<sstream>
+	"opencv2/core/operations.hpp"
+	"opencv2/core/mat.hpp"
+
+1397214926 c:\opencv\modules\core\include\opencv2\core\types_c.h
+	<assert.h>
+	<stdlib.h>
+	<string.h>
+	<float.h>
+	<stdint.h>
+	<intrin.h>
+	<emmintrin.h>
+	<fastmath.h>
+	<math.h>
+	<ipl.h>
+	<ipl/ipl.h>
+	"tegra_round.hpp"
+	"emmintrin.h"
+
+1397214926 c:\opencv\modules\core\include\opencv2\core\version.hpp
+
+1397214926 c:\opencv\modules\core\include\opencv2\core\operations.hpp
+	<string.h>
+	<limits.h>
+	<ext/atomicity.h>
+	<bits/atomicity.h>
+	<limits>
+
+1397214926 c:\opencv\modules\core\include\opencv2\core\mat.hpp
+	<limits.h>
+	<string.h>
+
+1496490115 source:c:\ear_lbp\main.cpp
+	"opencv2/highgui/highgui.hpp"
+	"opencv2/core/core.hpp"
+	"opencv2/imgproc/imgproc.hpp"
+	"lbp.hpp"
+	"histogram.hpp"
+	<iostream>
+	<cstdio>
+	<vector>
+
+1397214926 c:\opencv\modules\highgui\include\opencv2\highgui\highgui.hpp
+	"opencv2/core/core.hpp"
+	"opencv2/highgui/highgui_c.h"
+
+1397214926 c:\opencv\modules\highgui\include\opencv2\highgui\highgui_c.h
+	"opencv2/core/core_c.h"
+
+1397214926 c:\opencv\modules\core\include\opencv2\core\core_c.h
+	"opencv2/core/types_c.h"
+
+1397214926 c:\opencv\modules\imgproc\include\opencv2\imgproc\imgproc.hpp
+	"opencv2/core/core.hpp"
+	"opencv2/imgproc/types_c.h"
+
+1397214926 c:\opencv\modules\imgproc\include\opencv2\imgproc\types_c.h
+	"opencv2/core/core_c.h"
+
+1496489668 c:\ear_lbp\lbp.hpp
+	<opencv2/core/core.hpp>
+	<limits>
+
+1496489645 source:c:\ear_lbp\lbp.cpp
+	"lbp.hpp"
+
