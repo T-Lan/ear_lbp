@@ -16,11 +16,11 @@
 
   int main(int argc, char** argv)
  {
-     //ear2-4 png is from yogi
+     //ear2-4 7-9 png is from yogi
      //ear5-6 png is from lan
      Mat image_original = imread(argc == 2 ? argv[1] : "ear1.png", 1);
-     Mat image_gray1 = imread(argc == 2 ? argv[1] : "ear4.png", CV_LOAD_IMAGE_GRAYSCALE);
-     Mat image_gray2 = imread(argc == 2 ? argv[1] : "ear2.png", CV_LOAD_IMAGE_GRAYSCALE);
+     Mat image_gray1 = imread(argc == 2 ? argv[1] : "ear5.png", CV_LOAD_IMAGE_GRAYSCALE);
+     Mat image_gray2 = imread(argc == 2 ? argv[1] : "ear8.png", CV_LOAD_IMAGE_GRAYSCALE);
 
 
 
