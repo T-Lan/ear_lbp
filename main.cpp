@@ -16,18 +16,23 @@
 
   int main(int argc, char** argv)
  {
-     Mat image_original = imread(argc == 2 ? argv[1] : "ear.jpg", 1);
-     Mat image_gray = imread(argc == 2 ? argv[1] : "ear.jpg", CV_LOAD_IMAGE_GRAYSCALE);
+     //ear2-4 png is from yogi
+     //ear5-6 png is from lan
+     Mat image_original = imread(argc == 2 ? argv[1] : "ear1.png", 1);
+     Mat image_gray1 = imread(argc == 2 ? argv[1] : "ear4.png", CV_LOAD_IMAGE_GRAYSCALE);
+     Mat image_gray2 = imread(argc == 2 ? argv[1] : "ear2.png", CV_LOAD_IMAGE_GRAYSCALE);
+
+
 
      //imshow("image", image_original);
 
-     Mat image_lbp = ELBP(image_gray,2,16);
-     imshow("image", image_lbp);
+     //Mat image_lbp = ELBP(image_gray,2,16);
+     //imshow("image", image_lbp);
 
-     int rows = image_gray.rows;
+     /*int rows = image_gray.rows;
      int cols = image_gray.cols;
 
-     //printf("%d %d", rows, cols);
+     printf("%d %d", rows, cols);
      printf("%d",rows%block);
 
 
@@ -50,12 +55,21 @@
             segment.push_back(ELBP(region_frame,2,16));
 
         }
-     }
+     }*/
 
     //printf("%d %d", cols/block, rows/block);
+    //imshow("segment0",segment[0]);
+    //cout<<segment[10].type()<<endl;
 
+
+    Mat stats1 = spatial_histogram(image_gray1, 65536);
+    Mat stats2 = spatial_histogram(image_gray2, 65536);
+    double result = chi_square_<unsigned short>(stats1,stats2);
+    printf("%f",result);
 
 
      waitKey(0);
      return 0;
  }
+
+

@@ -51,7 +51,7 @@
 	<limits.h>
 	<string.h>
 
-1496490115 source:c:\ear_lbp\main.cpp
+1496507850 source:c:\ear_lbp\main.cpp
 	"opencv2/highgui/highgui.hpp"
 	"opencv2/core/core.hpp"
 	"opencv2/imgproc/imgproc.hpp"
