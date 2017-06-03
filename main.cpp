@@ -19,10 +19,26 @@
      //ear2-4 7-9 png is from yogi
      //ear5-6 png is from lan
      Mat image_original = imread(argc == 2 ? argv[1] : "ear1.png", 1);
-     Mat image_gray1 = imread(argc == 2 ? argv[1] : "ear5.png", CV_LOAD_IMAGE_GRAYSCALE);
-     Mat image_gray2 = imread(argc == 2 ? argv[1] : "ear8.png", CV_LOAD_IMAGE_GRAYSCALE);
+     // change input training picture
+     Mat image_train = imread(argc == 2 ? argv[1] : "./ears/ear-train3-left.png", CV_LOAD_IMAGE_GRAYSCALE);
+     Mat image_adam = imread(argc == 2 ? argv[1] : "./ears/ear-adam-left.png", CV_LOAD_IMAGE_GRAYSCALE);
+     Mat image_yogi = imread(argc == 2 ? argv[1] : "./ears/ear-Yogi-left.png", CV_LOAD_IMAGE_GRAYSCALE);
+     Mat image_lan = imread(argc == 2 ? argv[1] : "./ears/ear-Lan-left.png", CV_LOAD_IMAGE_GRAYSCALE);
 
+    Mat stats_train = spatial_histogram(image_train, 65536);
+    Mat stats_adam = spatial_histogram(image_adam, 65536);
+    Mat stats_yogi = spatial_histogram(image_yogi, 65536);
+    Mat stats_lan = spatial_histogram(image_lan, 65536);
 
+    double result_adam = chi_square_<unsigned short>(stats_train,stats_adam);
+    printf("adam: %f\n",result_adam);
+    double result_yogi = chi_square_<unsigned short>(stats_train,stats_yogi);
+    printf("yogi: %f\n",result_yogi);
+    double result_lan = chi_square_<unsigned short>(stats_train,stats_lan);
+    printf("lan: %f\n",result_lan);
+
+     waitKey(0);
+     return 0;
 
      //imshow("image", image_original);
 
@@ -62,14 +78,7 @@
     //cout<<segment[10].type()<<endl;
 
 
-    Mat stats1 = spatial_histogram(image_gray1, 65536);
-    Mat stats2 = spatial_histogram(image_gray2, 65536);
-    double result = chi_square_<unsigned short>(stats1,stats2);
-    printf("%f",result);
 
-
-     waitKey(0);
-     return 0;
  }
 
 
