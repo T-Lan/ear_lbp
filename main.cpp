@@ -25,10 +25,15 @@
      Mat image_yogi = imread(argc == 2 ? argv[1] : "./moreears/ear-yogib-left.png", CV_LOAD_IMAGE_GRAYSCALE);
      Mat image_lan = imread(argc == 2 ? argv[1] : "./moreears/ear-lanb-left.png", CV_LOAD_IMAGE_GRAYSCALE);
 
-    Mat stats_train = spatial_histogram(image_train, 65536);
-    Mat stats_adam = spatial_histogram(image_adam, 65536);
-    Mat stats_yogi = spatial_histogram(image_yogi, 65536);
-    Mat stats_lan = spatial_histogram(image_lan, 65536);
+     Mat lbp_train = ELBP(image_train,2,16);
+     Mat lbp_adam = ELBP(image_adam,2,16);
+     Mat lbp_yogi = ELBP(image_yogi,2,16);
+     Mat lbp_lan = ELBP(image_lan,2,16);
+
+    Mat stats_train = spatial_histogram(lbp_train, 65536);
+    Mat stats_adam = spatial_histogram(lbp_adam, 65536);
+    Mat stats_yogi = spatial_histogram(lbp_yogi, 65536);
+    Mat stats_lan = spatial_histogram(lbp_lan, 65536);
 
     double result_adam = chi_square_<unsigned short>(stats_train,stats_adam);
     printf("adam: %f\n",result_adam);
